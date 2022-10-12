@@ -1,3 +1,5 @@
+Assignment 1 Semester 1 Mid term
+---
 1. Write a program to find the largest and smallest among three entered numbers by the user and
 also display whether the identified largest/smallest number is even or odd. (Using conditional
 statement)
