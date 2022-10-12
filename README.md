@@ -42,4 +42,4 @@ Input: 5 Output: 120
 9. Write a program to build a basic calculator like we use. User can give input as many times as they
 want. They can do addition, Subtraction, Multiplication, Division, Remainder, They Could find
 square, Square root, Round up any number, find the value of log, also they could find the solution
-of xy (x=2, y=2, xy = 4).
+of xy (x=2, y=2, x^y = 4).
