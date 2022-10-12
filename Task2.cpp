@@ -6,7 +6,7 @@ int main()
 {
     //using if else to determine vowel
     char ch;
-    cout<<" Enter any letter : ";
+    cout<<"Enter any letter : ";
     cin>>ch;
     ch=tolower(ch);
     if ((ch=='a')||(ch=='e')||(ch=='i')||(ch=='o')||(ch=='u'))
@@ -21,7 +21,7 @@ int main()
     //using switch to determine vowel
 
    /* char ch;
-    cout<<" Enter any letter : ";
+    cout<<"Enter any letter : ";
     cin>>ch;
     ch=tolower(ch);
     switch(ch)
