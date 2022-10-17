@@ -1,78 +1,90 @@
-#include <iostream>
+# include <iostream>
+#include <cmath>
 using namespace std;
 
-// Main program
-main()
+int main()
 {
-    int choice;
-
-    cout << "Press 1 for addition" << endl;
-    cout << "Press 2 for Subtraction" << endl;
-    cout << "Press 3 for Multiplication" << endl;
-    cout << "Press 4 for addition" << endl;
-    cin >> choice;
-    switch (choice)
+    char oper;
+    float num1, num2;
+    char exit='`';
+    while(exit!='#')
     {
+        cout << "Enter operator either + or - or * or / or % or s or r or R or L or ^  : "<< endl<<"Use # to exit";
+        cin >> oper;
 
-    case 1:
 
-    {
-        int i, n, num, sum = 0;
-        cout << "How many numbers you want to Add ? ";
-        cin >> n;
-        cout << "Enter " << n << " numbers: ";
-        for (i = 0; i < n; i++)
+
+        switch(oper)
         {
-            cin >> num;
-            sum = sum + num;
+        case '+':
+            cout << "Enter two operands: "<<endl;
+            cin >> num1 >> num2;
+            cout << num1+num2<<endl;
+            break;
+
+        case '-':
+            cout << "Enter two operands: "<<endl;
+            cin >> num1 >> num2;
+            cout << num1-num2<<endl;
+            break;
+
+        case '*':
+            cout << "Enter two operands: "<<endl;
+            cin >> num1 >> num2;
+            cout << num1*num2<<endl;
+            break;
+
+        case '/':
+            cout << "Enter two operands: "<<endl;
+            cin >> num1 >> num2;
+            cout << num1/num2<<endl;
+            break;
+
+        case '%':
+            cout << "Enter two operands: "<<endl;
+            cin >> num1 >> num2;
+            cout << (int)num1/(int)num2<<endl;
+            break;
+
+        case 's':
+            cout << "Enter one operands: "<<endl;
+            cin >> num1 ;
+            cout << num1*num1<<endl;
+            break;
+
+        case 'r':
+            cout << "Enter one operands: "<<endl;
+            cin >> num1 ;
+            cout << sqrt(num1)<<endl;
+            break;
+
+        case 'R':
+            cout << "Enter one operands: "<<endl;
+            cin >> num1 ;
+            cout << round(num1)<<endl;
+            break;
+
+        case 'L':
+            cout << "Enter one operands: "<<endl;
+            cin >> num1 ;
+            cout << log(num1)<<endl;
+            break;
+
+        case '^':
+            cout << "Enter two operands: "<<endl;
+            cin >> num1 >> num2;
+            cout << pow(num1, num2)<<endl;
+            break;
+
+        case '#':
+            exit='#';
+            break;
+        default:
+            // If the operator is other than +, -, * or /, error message is shown
+            cout << "Error! operator is not correct"<<endl;
+            break;
         }
-        cout << "\nSum of all " << n << " numbers is " << sum;
-        cout << endl;
-    }
-    break;
-
-        case 2:
-
-    /*{
-        int i, n, num, sub = 0;
-        cout << "How many numbers you want to subscract ? ";
-        cin >> n;
-        cout << "Enter " << n << " numbers: ";
-        for (i = 0; i < n; i++)
-        {
-            cin >> num;
-            if(i=0){num=sum}
-            temp = sum + num;
-            
-        }
-        cout << "\nSum of all " << n << " numbers is " << sum;
-        cout << endl;
-    }*/
-    break;
-
-    case 3:
-
-    {
-        int i, n, num, mult = 1;
-        cout << "How many numbers you want to multiply ? ";
-        cin >> n;
-        cout << "Enter " << n << " numbers: ";
-        for (i = 0; i < n; i++)
-        {
-            cin >> num;
-            mult = mult * num;
-        }
-        cout << "\nMultiplication of all " << n << " numbers is " << mult;
-        cout << endl;
-    }
-    break;
-
-    default:
-    {
-        cout << "Error! operator is not correct";
-        break;
     }
 
-        return 0;
-    }
+    return 0;
 }
