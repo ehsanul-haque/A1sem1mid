@@ -1,78 +1,147 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
-// Main program
-main()
+int main()
 {
     int choice;
+    double num1, num2, result;
+    bool exit = false;
 
-    cout << "Press 1 for addition" << endl;
-    cout << "Press 2 for Subtraction" << endl;
-    cout << "Press 3 for Multiplication" << endl;
-    cout << "Press 4 for addition" << endl;
-    cin >> choice;
-    switch (choice)
+    while (exit != true)
     {
+        // Options
+        cout << "\nPlease choose your option:"
+                "\n1 = Addition"
+                "\n2 = Subtraction"
+                "\n3 = Multiplication"
+                "\n4 = Division"
+                "\n5 = Remainder"
+                "\n6 = Square"
+                "\n7 = Square root"
+                "\n8 = Round up any number"
+                "\n9 = Log"
+                "\n10 = Power "
+                "\n11 = exit"
+                "\n\nChoice: ";
+        cin >> choice;
 
-    case 1:
-
-    {
-        int i, n, num, sum = 0;
-        cout << "How many numbers you want to Add ? ";
-        cin >> n;
-        cout << "Enter " << n << " numbers: ";
-        for (i = 0; i < n; i++)
+        // Check whether the choice is in the given range
+        if (choice < 1 || choice > 11)
         {
-            cin >> num;
-            sum = sum + num;
+            cout << "\nPlease choose from the options mentioned below."
+                    "\n1 = Addition"
+                    "\n2 = Subtraction"
+                    "\n3 = Multiplication"
+                    "\n4 = Division"
+                    "\n5 = Remainder"
+                    "\n6 = Square"
+                    "\n7 = Square root"
+                    "\n8 = Round up any number"
+                    "\n9 = Log"
+                    "\n10 = Power "
+                    "\n11 = exit"
+                    "\nChoice: ";
+            cin >> choice;
         }
-        cout << "\nSum of all " << n << " numbers is " << sum;
-        cout << endl;
-    }
-    break;
+        switch (choice)
+        {
+        // Addition
+        case 1:
+            cout << "Enter two numbers: \n";
+            cin >> num1 >> num2;
+            result = num1 + num2;
+            cout << "Sum = " << result << endl;
+            break;
 
+        // Subtraction
         case 2:
+            cout << "Enter two numbers: \n";
+            cin >> num1 >> num2;
+            result = num1 - num2;
+            cout << "Subtraction = " << result << endl;
+            break;
 
-    /*{
-        int i, n, num, sub = 0;
-        cout << "How many numbers you want to subscract ? ";
-        cin >> n;
-        cout << "Enter " << n << " numbers: ";
-        for (i = 0; i < n; i++)
-        {
-            cin >> num;
-            if(i=0){num=sum}
-            temp = sum + num;
-            
+        // Multiplication
+        case 3:
+            cout << "Enter two numbers: \n";
+            cin >> num1 >> num2;
+            result = num1 * num2;
+            cout << "Product = " << result << endl;
+            break;
+
+        // Division
+        case 4:
+            cout << "Enter Dividend: ";
+            cin >> num1;
+            cout << "Enter Divisor: ";
+            cin >> num2;
+
+            // while loop checks for divisor whether it is zero or not
+            while (num2 == 0)
+            {
+                cout << "\nDivisor cannot be zero."
+                        "\nEnter divisor once again: "
+                     << endl;
+                cin >> num2;
+            }
+            result = num1 / num2;
+            cout << "\nResult = " << result << endl;
+            break;
+        // Remainder
+        case 5:
+
+            cout << "Enter two numbers: \n";
+            cin >> num1 >> num2;
+            result = (int)num1 % (int)num2;
+            cout << "Remainder = " << result << endl;
+            break;
+
+        // Square
+        case 6:
+            cout << "Enter any number: " << endl;
+            cin >> num1;
+            result = num1 * num1;
+            cout << "Square of " << num1 << " = " << result << endl;
+            break;
+        // Square root
+        case 7:
+
+            cout << "Enter any number: " << endl;
+            cin >> num1;
+            cout << "Squre root of " << num1 << " = " << sqrt(num1) << endl;
+            break;
+        // Round up any number
+        case 8:
+
+            cout << "Enter any number: " << endl;
+            cin >> num1;
+            cout << "Round up of " << num1 << " is = " << round(num1) << endl;
+            break;
+        // Log
+        case 9:
+
+            cout << "Enter any number: " << endl;
+            cin >> num1;
+            cout << "Log(" << num1 << ") = " << log(num1) << endl;
+            break;
+        // Power
+        case 10:
+
+            cout << "Enter base number: " << endl;
+            cin >> num1;
+            cout << "Enter exponent number: " << endl;
+            cin >> num2;
+            cout << num1 << " to the power " << num2 << " = " << pow(num1, num2) << endl;
+            break;
+        // exit
+        case 11:
+
+            exit = true;
+            return 0;
+
+        default:
+            cout << "\nError";
         }
-        cout << "\nSum of all " << n << " numbers is " << sum;
-        cout << endl;
-    }*/
-    break;
-
-    case 3:
-
-    {
-        int i, n, num, mult = 1;
-        cout << "How many numbers you want to multiply ? ";
-        cin >> n;
-        cout << "Enter " << n << " numbers: ";
-        for (i = 0; i < n; i++)
-        {
-            cin >> num;
-            mult = mult * num;
-        }
-        cout << "\nMultiplication of all " << n << " numbers is " << mult;
-        cout << endl;
-    }
-    break;
-
-    default:
-    {
-        cout << "Error! operator is not correct";
-        break;
-    }
-
-        return 0;
     }
 }
