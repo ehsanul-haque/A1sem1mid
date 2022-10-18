@@ -15,3 +15,21 @@ int main()
 
     return 0;
 }
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+    int num, fact = 1;
+    cout << "Enter a Number: "<<endl;
+    cin >> num;
+    while (num >= 1)
+    {
+        fact = fact * num;
+        num--;
+    }
+    cout << "\nFactorial = " << fact;
+    cout << endl;
+    return 0;
+}
+*/
